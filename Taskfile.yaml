@@ -1,0 +1,14 @@
+version: "3"
+
+tasks:
+  sqlc:
+    cmds:
+      - sqlc generate
+
+  copydb:
+    cmds:
+      - cp ./test/sqlc/db.go ./sqlc
+
+  newdb:
+    cmds:
+      - sqlite3 ./test/test.db < ./test/sqlite/schema.sql
